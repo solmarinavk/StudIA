@@ -7,13 +7,13 @@
 }
 
 /* Menu Styles */
-.menu {
+.menu, .tutorial, .result, .game {
   background: white;
   border-radius: 30px;
   padding: 50px 40px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
   animation: fadeIn 0.5s ease-in;
 }
@@ -62,10 +62,67 @@
   text-align: left;
 }
 
+/* Difficulty Selection */
+.difficulty-section {
+  margin: 40px 0;
+  padding: 30px 0;
+  border-top: 2px solid #e8ecf1;
+  border-bottom: 2px solid #e8ecf1;
+}
+
+.difficulty-section h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.difficulty-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-difficulty {
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+}
+
+.btn-difficulty.easy {
+  background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+}
+
+.btn-difficulty.medium {
+  background: linear-gradient(135deg, #ff922b 0%, #fd7e14 100%);
+}
+
+.btn-difficulty.hard {
+  background: linear-gradient(135deg, #ff6b6b 0%, #fa5252 100%);
+}
+
+.btn-difficulty:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.diff-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Operations List */
 .operations-list {
   margin-top: 40px;
   padding-top: 30px;
-  border-top: 2px solid #e8ecf1;
 }
 
 .operations-list h3 {
@@ -89,17 +146,141 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.operation-badge.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.operation-badge.clickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Tutorial Styles */
+.tutorial-title {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 30px;
+}
+
+.tutorial-content {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.tutorial-explanation {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.tutorial-explanation pre {
+  white-space: pre-wrap;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+}
+
+.tutorial-example {
+  background: white;
+  border: 3px solid #667eea;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.tutorial-example h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.example-problem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.example-steps {
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.example-steps p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #555;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+}
+
+.tutorial-nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-skip {
+  margin-top: 20px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.btn-skip:hover {
+  color: #667eea;
+}
+
+/* Fraction Visual Representation */
+.fraction-visual {
+  margin-top: 15px;
+}
+
+.visual-parts {
+  display: flex;
+  gap: 2px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.visual-part {
+  height: 100%;
+  border: 2px solid #667eea;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.visual-part.filled {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.visual-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
 }
 
 /* Game Styles */
 .game {
-  background: white;
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   max-width: 900px;
-  width: 100%;
-  animation: fadeIn 0.5s ease-in;
 }
 
 .game-header {
@@ -248,6 +429,76 @@
   -moz-appearance: textfield;
 }
 
+/* Help and Buttons */
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-help {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+.btn-help:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+}
+
+.help-box {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6b3 100%);
+  border: 3px solid #ffc107;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 30px;
+  text-align: left;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-box h3 {
+  color: #ff9800;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  color: #333;
+  border-left: 4px solid #ffc107;
+  margin: 0;
+}
+
 .hint {
   text-align: center;
   color: #666;
@@ -289,18 +540,26 @@
   margin: 0;
 }
 
-/* Result Styles */
-.result {
-  background: white;
-  border-radius: 30px;
-  padding: 50px 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-  animation: fadeIn 0.5s ease-in;
+.btn-exit {
+  margin-top: 30px;
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.btn-exit:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Result Styles */
 .result-title {
   font-size: 2.5rem;
   color: #667eea;
@@ -401,7 +660,7 @@
 }
 
 .btn-check {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 /* Animations */
@@ -433,7 +692,7 @@
     font-size: 2.5rem;
   }
 
-  .menu, .game, .result {
+  .menu, .game, .result, .tutorial {
     padding: 30px 20px;
   }
 
@@ -461,5 +720,21 @@
   .stat {
     font-size: 1rem;
     padding: 10px 16px;
+  }
+
+  .difficulty-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .tutorial-explanation pre {
+    font-size: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn-help, .btn-check {
+    width: 100%;
   }
 }
